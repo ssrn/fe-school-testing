@@ -1,10 +1,10 @@
 mixin icon(name, mod)
 	if(mod)
 		svg(class="icon__" + name + ' ' + mod)
-			use(xlink:href="static/images/svg/sprite.svg#" + name)
+			use(xlink:href="./static/images/svg/sprite.svg#" + name)
 	else
 		svg(class="icon__" + name)
-			use(xlink:href="img/svg/sprite.svg#" + name)
+			use(xlink:href="./img/svg/sprite.svg#" + name)
 
 
 mixin item(item)
@@ -48,4 +48,4 @@ mixin search(searchClass)
 			+icon('search')
 		form(action="#" method="get")
 			label(class="search-label visually-hidden" for="search" aria-label="Search")
-			input(id="search" class="search-input" type="text" placeholder="Search")
+			input(id=`${searchClass}` class="search-input" type="text" placeholder="Search")
