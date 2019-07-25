@@ -1,0 +1,61 @@
+extends layout/main
+
+block variables
+    - var title = 'Lorem'
+
+block content
+    .container.container--with-sidebar
+        h1.page__title Lorem Ipsum
+
+        .content-section
+            .about
+                h2 About
+                p.about__info
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam laoreet ligula orci, in finibus tortor eleifend a. Sed nec magna et sapien faucibus cursus.
+                    | Praesent vehicula vel est eu malesuada. Nullam eu nibh consectetur, iaculis erat nec, consequat diam. Sed posuere consequat lacus, eu aliquam diam dignissim eu.
+                    | Sed quis est ex. Vestibulum imperdiet nunc in elementum consectetur. Aliquam ornare, quam ut tincidunt pretium, sapien ligula varius tellus, at gravida lectus odio at odio.
+                    | Donec eget odio ante. Vivamus sed ligula lorem. Nullam at laoreet elit, eu lobortis ligula. Aliquam dignissim egestas hendrerit.
+                    | Nunc in leo suscipit tellus lacinia lacinia ac sit amet sapien. Donec ac elit id dui luctus aliquam iaculis a diam.
+                    | Phasellus accumsan est at dolor consectetur, sit amet laoreet tortor consequat. Morbi efficitur risus eu augue condimentum ultrices.
+                    | Cras ac vulputate diam, ut consequat ligula. Cras vehicula auctor aliquet. In ut enim a erat euismod sagittis. Nunc at venenatis lorem.
+                    | Nunc commodo porttitor felis et elementum. Cras dolor purus, varius a luctus id, lacinia a odio.
+                    | Nam laoreet libero et libero imperdiet pretium. Etiam ullamcorper libero massa, mattis aliquet enim semper et. In facilisis bibendum auctor.
+
+            .focus
+                h2 Area of focus
+
+                - var areas = [{icon: 'internet', name: 'Economy, Politics & Environment'}, {icon: 'culture', name: 'Health & Culture'}, {icon: 'handshake', name: 'Public Administration & Non-Profit'}]
+                ul.focus-list
+                    each area in areas
+                        +focus(area)
+
+        aside.sidebar.sidebar--right
+            .contact
+                h3.contact__title Contact
+                .contact__item
+                    .contact__image
+                        img(src="img/gosling.jpg" srcset="img/gosling@2x.jpg 2x, img/gosling@3x.jpg 3x" alt="Gosling")
+                    .contact__info
+                        .contact__name Ivan Ivanov
+                        a(href="mailto:ivan@mail.ru").contact__email ivan@mail.ru
+
+            .social
+                h3.social__title Follow us
+
+                - var links = [{href: '#', name: 'web', text: 'lorem.com'}, {href: '#', name: 'linkedin', text: 'linkedin.com/lorem'}]
+                ul.social-links
+                    each link in links
+                        +social-link(link)
+
+            +search('search--sidebar')
+
+    .items
+        .container
+            .items__header
+                h2.items__title Lorem of Lorem Ipsum
+                +search('search--items')
+
+            - var items = [{name: 'Lorem upsum Dolor',  status: 'Public'}, {name: 'Lorem upsum Dolor', author: 'Lorem upsum Dolor', format: 'csv', status: 'Public'}, {name: 'Lorem upsum Dolor', author: 'Lorem upsum Dolor', format: 'csv', status: 'Open'}]
+            .items__wrapper
+                each item in items
+                    +item(item)

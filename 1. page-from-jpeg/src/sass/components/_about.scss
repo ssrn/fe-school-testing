@@ -1,0 +1,48 @@
+.about {
+  margin-bottom: $space-xxl;
+}
+
+.about__info {
+  color: $text-light;
+  font-size: $h3-font-size;
+}
+
+.focus {
+  margin-bottom: $space-xxl;
+}
+
+.focus-list {
+  list-style: none;
+  margin: 0 (-$space-xxs);
+  padding: 0;
+}
+
+.focus-list__item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: $space-xxs;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  &--internet svg {
+    color: #5A4D99;
+  }
+
+  &--culture svg {
+    color: #BFCC36;
+  }
+
+  &--handshake svg {
+    color: #1A587A;
+  }
+}
+
+.focus-list__name {
+  padding: 0 $space-xs;
+  line-height: 30px;
+  background-color: $light-gray;
+}

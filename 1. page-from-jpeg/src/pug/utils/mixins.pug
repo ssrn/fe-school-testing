@@ -1,0 +1,51 @@
+mixin icon(name, mod)
+	if(mod)
+		svg(class="icon__" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/sprite.svg#" + name)
+	else
+		svg(class="icon__" + name)
+			use(xlink:href="img/svg/sprite.svg#" + name)
+
+
+mixin item(item)
+	.item__outer-wrap
+		.item
+			.item__inner-wrap
+				.item__header
+					img(src="img/item-logo.png" alt="Card").item__img
+					.item__title= item.name
+				.item__body
+					if item.author
+						.item__author Lorem by
+							b  #{item.author}
+					.item__desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae enim sit.
+					if item.format
+						.item__format
+							b Format:
+							|  #{item.format}
+					.item__status= item.status
+			.item__footer
+				.item__price-wrap
+					.item__price Lorem
+					.item__price-desc No fees & no time restriction
+				button.btn.btn--item View Details...
+
+
+mixin focus(area)
+	li(class=`focus-list__item focus-list__item--${area.icon}`)
+		+icon(area.icon)
+		span.focus-list__name= area.name
+
+
+mixin social-link(link)
+	li.social-links__item
+		a(href=`${link.href}` class=`social-links__link social-links__link--${link.name}`)= link.text
+
+
+mixin search(searchClass)
+	div(class=`search ${searchClass}`)
+		.search__icon
+			+icon('search')
+		form(action="#" method="get")
+			label(class="search-label visually-hidden" for="search" aria-label="Search")
+			input(id="search" class="search-input" type="text" placeholder="Search")

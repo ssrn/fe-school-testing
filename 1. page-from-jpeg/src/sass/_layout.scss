@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page__title {
+  width: 100%;
+}
+
+@include media(sm) {
+  .container--with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .content-section {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+    margin-bottom: $space-sm;
+
+    .container--with-sidebar & {
+      padding-right: $space-xs;
+    }
+  }
+
+  .sidebar {
+    flex-basis: 25%;
+    flex-grow: 1;
+
+    &--right {
+      padding-left: $space-xs;
+    }
+  }
+}
+
+
+

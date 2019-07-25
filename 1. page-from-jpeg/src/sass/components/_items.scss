@@ -1,0 +1,144 @@
+.items {
+  padding: $space-xs 0;
+  background-color: $light-gray;
+
+  @include media(sm) {
+    padding: $space-xxl 0 96px;
+  }
+}
+
+.items__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items__title {
+  font-size: $h1-font-size;
+
+  @include media(ms, max) {
+    display: none;
+  }
+}
+
+.items__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 (-$space-xs);
+}
+
+.item__outer-wrap {
+  flex-basis: 100%;
+  padding: $space-xs;
+
+  @include media(sm) {
+    flex-basis: 33.3333%;
+  }
+}
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: $space-xs;
+  background: #fff;
+
+  @include media(sm) {
+    padding: $space-md;
+  }
+}
+
+.item__inner-wrap {
+  @include media(sm) {
+    margin-bottom: $space-sm;
+  }
+}
+
+.item__header {
+  display: flex;
+  margin-bottom: $space-sm;
+}
+
+.item__img {
+  width: 80px;
+  height: 80px;
+  margin-right: $space-xs;
+  border-radius: 3px;
+}
+
+.item__title {
+  font-size: $h2-font-size;
+}
+
+.item__author {
+  margin-bottom: $space-sm;
+  color: $text-light;
+  font-size: $h3-font-size;
+}
+
+.item__desc {
+  margin-bottom: $space-sm;
+
+  @include media(ms, max) {
+    display: none;
+  }
+}
+
+.item__format {
+  margin-bottom: $space-xs;
+
+  @include media(ms, max) {
+    display: none;
+  }
+}
+
+.item__status {
+  display: inline-block;
+  padding: 0 $space-xxs;
+  color: $link-color;
+  font-weight: bold;
+  border: 1px solid $link-color;
+  border-radius: 3px;
+}
+
+.item__footer {
+  text-align: right;
+
+  @include media(ms, max) {
+    position: absolute;
+    bottom: $space-xs;
+    right: $space-xs;
+  }
+}
+
+.item__price-wrap {
+  @include media(sm) {
+    margin-bottom: $space-xs;
+  }
+}
+
+.item__price {
+  font-size: $h2-font-size;
+  line-height: 1;
+
+  @include media(sm) {
+    font-size: $h1-font-size;
+  }
+}
+
+.item__price-desc {
+  font-size: $xs-font-size;
+
+  @include media(ms, max) {
+    display: none;
+  }
+}
+
+.btn--item {
+  @include media(ms, max) {
+    display: none;
+  }
+}

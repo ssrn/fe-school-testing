@@ -1,0 +1,13 @@
+.btn {
+  width: 100%;
+  padding: $space-xxs;
+  color: #fff;
+  background-color: $secondary;
+  border: none;
+  border-radius:  $border-radius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($secondary, 10%);
+  }
+}
